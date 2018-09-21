@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #4b4b4b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            width: 650px;
+            height: 350px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 18px;
+            color: #7f7f7f;
+            display: flex;
+            justify-content: space-between;
+            flex-flow: column;
+            align-items: center;
+            position: relative;
+        }
+        #close {
+            width: 30px;
+            height: 30px;
+            border-radius: 40%;
+            font-size: 22px;
+            font-weight: 100;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        h1 {
+            width: 100%;
+            height: 80px;
+            line-height: 80px;
+            font-size: 38px;
+            text-align: center;
+        }
+        .a {
+            width: 400px;
+            height: 80px;
+            display: flex;
+            flex-flow: column;
+            display: flex;
+            justify-content: space-around;
+        }
+        input {
+            width: 360px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            padding: 0 20px;
+            outline: none;
+        }
+        button {
+            width: 400px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            outline: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<main>
+    <div id="close">X</div>
+    <h1>您好！请先登录</h1>
+    <div class="a">
+        <lable>username</lable>
+        <input type="text" placeholder="请输入您的账号" id="username">
+    </div>
+    <div class="a">
+        <lable>password</lable>
+        <input type="password" placeholder="请输入您的密码" id="password">
+    </div>
+    <button id="login">登录</button>
+</main>
+
+</body>
+</html>
+
+<script>
+
+    let name = document.getElementById("username");
+    let paw = document.getElementById("password");
+    let btn = document.getElementById("login");
+    let x = document.getElementById("close");
+    btn.onclick = function () {
+        if (name.value == "438944081" && paw.value == "1647788") {
+            alert("登录成功");
+            window.close();
+            window.open("http://www.baidu.com/");
+        }
+        else {
+            alert("登录失败");
+            window.close();
+            window.open("练习-登录错误界面.html");
+        }
+    }
+    x.onclick = function () {
+        window.close();
+    }
+
+</script>

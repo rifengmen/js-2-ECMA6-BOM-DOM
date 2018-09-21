@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day04BOM</title>
+
+    <script>
+
+        // BOM:浏览器对象模型
+        // window
+        //     **document:文档对象---DOM 页面中的元素（单独重点去讲解）
+        //     *history:历史记录
+
+        // console.log(window.history);
+        // // history.length:当前有几张页面
+        // console.log(history.length);
+        // // history.back():回退到前一张页面（前提是必须有前一张）
+        // history.back();
+        // // history.forward():前进到后一张页面（前提是必须有后一张）
+        // history.forward()；
+        // // history.go():括号内为0就是刷新,括号内为1就是前进，括号内是-1就是后退
+        // history.go(0);
+        // history.go(1)；
+        // history.go(-1);
+
+        //     *location:当前网页中地址相关信息
+
+        console.log(window.location);
+        // // location.href:当前文件的所有路径
+        // let res = location.href;
+        // console.log(res);
+        // // location.pathname:绝对路径
+        // let res = location.pathname;
+        // console.log(res);
+        // // location.port:端口号
+        // let res = location.port;
+        // console.log(res);
+        // // location.assign(): 加载指定的新的HTML文档。就相当于一个链接，跳转到指定的url，当前页面会转为新页面内容，可以点击后退返回上一个页面
+        // location.assign(URL)
+        // location.reload():重新加载当前文档
+        // location.replace():通过加载指定的文档来替换当前文档，这个方法是替换当前窗口页面，前后两个页面共用一个窗口，所以是没有后退返回上一页的
+        // 不会在History对象中生成一个新的记录。当使用该方法时，新的URL将覆盖 History 对象中的当前记录。
+        // location.replace(newURL)
+
+        //     screen:获取屏幕信息
+
+        // // 获取屏幕分辨率
+        // console.log(window.screen.width);
+
+        //     frames:
+        //     navigator:
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day01-zuoye</title>
+
+    <script>
+
+        // //1、exist函数：判断数组中书否存在大于零的数，存在返回true，否则返回false
+        // let arr1 = [1,3,0,8,9,11,-2,5,20,17];
+        // function exist(arr) {
+        //     let sum = 0;
+        //     for (let i=0;i<arr.length;i++) {
+        //
+        //         if (arr[i] > sum) {
+        //             sum = arr[i];
+        //         }
+        //     }
+        //     if (sum > 0) {
+        //         return true;
+        //     }
+        //     else {
+        //         return false;
+        //     }
+        // }
+        // console.log(exist(arr1));
+
+
+        // //2、every函数：判断数组中是否所有的数都大于零，是就返回true，否则返回false
+        // let arr2 = [1,3,0,8,9,11,-2,5,20,17];
+        // function every(arr) {
+        //     let sum = 0;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] <= sum) {
+        //             sum = arr[i];
+        //         }
+        //     }
+        //     if (sum <= 0) {
+        //         return false;
+        //     }
+        //     else {
+        //         return true;
+        //     }
+        // }
+        // console.log(every(arr2));
+
+
+        // //3、filter函数：筛选数组中所有大于零的数，并将这些数放在新的数组中，返回这个数组
+        // let arr3 = [1,3,0,8,9,11,-2,5,20,17];
+        // let newarr3 = [];
+        // function filter(arr) {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] > 0) {
+        //             newarr3[newarr3.length] = arr[i];
+        //         }
+        //     }
+        //     return newarr3;
+        // }
+        // console.log(filter(arr3));
+
+
+        // //4、map函数:将数组中的数扩大两倍，放在新数组中，返回这个新数组
+        // let arr4 = [1,3,0,8,9,11,-2,5,20,17];
+        // let newarr4 = [];
+        // function map(arr) {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         newarr4[newarr4.length] = arr[i]*2;
+        //     }
+        //     return newarr4;
+        // }
+        // console.log(map(arr4));
+
+
+        // //5、concat函数：将两个数组合并：arr1=[1,2,3] arr2=["a","b","c"],返回合并后的数组
+        // let arr51 = [1,2,3];
+        // let arr52=["a","b","c"];
+        // function concat(arr1,arr2) {
+        //     for (let i=0;i<arr2.length;i++) {
+        //         arr1.push(arr2[i]);
+        //     }
+        //     return arr1;
+        // }
+        // console.log(concat(arr51,arr52));
+
+
+        // //6、reverse函数：倒着访问某数组，返回倒序后的新数组
+        // let arr6 = [1,3,0,8,9,11,-2,5,20,17];
+        // let newarr6 = [];
+        // function reverse(arr) {
+        //     for (let i = arr.length - 1; i >= 0; i--) {
+        //         arr[i];
+        //         newarr6[newarr6.length] = arr[i];
+        //     }
+        //     return newarr6;
+        // }
+        // console.log(reverse(arr6));
+
+
+        // //7、includes函数：判断数组中是否包含某数据，如果有，返回该值所在的位置，否则，返回-1
+        // let arr7 = [1,3,0,8,9,11,-2,5,20,17];
+        // function includes(arr,sum) {
+        //     for (let i=0;i<arr.length;i++) {
+        //         if (arr[i] === sum) {
+        //             return i;
+        //         }
+        //     }
+        //         return -1;
+        // }
+        // console.log(includes(arr7,5));
+
+
+        // // 8、join函数：将数组转化为字符串，默认用-连接，返回转化后的字符串
+        // //如arr=[1,5,8,9]，转化后为str=“1-5-8-9”；
+        // let arr8 = [1,3,0,8,9,11,-2,5,20,17];
+        // // let str = "";
+        // function join(arr) {
+        //     str = arr.join("-");
+        //     return str;
+        // }
+        // console.log(join(arr8));
+
+
+        // //9、deleteEmpty数组去空，并返回新数组
+        // let arr9 = [1,3,0,8,,11,,5,,17];
+        // let newarr9 = [];
+        // function deleteEmpty(arr) {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] != undefined) {
+        //             newarr9[newarr9.length] = arr[i];
+        //         }
+        //     }
+        //     return newarr9;
+        // }
+        // console.log(deleteEmpty(arr9));
+
+
+        // 10、deleteRepeat数组去重，返回不重复的数组
+        // let arr10 = [1,3,0,8,3,9,11,-2,5,20,20,17];
+        // let newarr10 = [];
+        // function deleteRepeat(arr) {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         let flag = false;
+        //         for (let j = 0; j < newarr10.length; j++) {
+        //             if (arr[i] === newarr10[j]) {
+        //                 flag = true;
+        //                 break;
+        //             }
+        //         }
+        //         if (flag == false) {
+        //             newarr10[newarr10.length] = arr[i]);
+        //         }
+        //     }
+        //     return newarr10;
+        // }
+        // console.log(deleteRepeat(arr10));
+
+
+        // //11、Max求最大值、Min求最小值
+        // //Max求最大值、
+        // let arr11 = [1,3,0,8,9,11,-2,5,20,17];
+        // let sum = arr11[0];
+        // function Max(arr) {
+        //     for (let i = 1; i < arr.length; i++) {
+        //         if (sum < arr[i]) {
+        //             sum = arr[i];
+        //         }
+        //     }
+        //     return sum;
+        // }
+        // console.log(Max(arr11));
+        // //Min求最小值
+        // function Min(arr) {
+        //     for (let i = 1; i < arr.length; i++) {
+        //         for (let j = 1; j < arr.length; j++) {
+        //             if (arr[i] > arr[j]) {
+        //                 sum = arr[j];
+        //             }
+        //         }
+        //         return sum;
+        //     }
+        // }
+        // console.log(Min(arr11));
+
+
+        // //12、sort数组排序，根据传入的参数不同，执行不同的排序函数
+        // let arr12 = [1,3,0,8,9,11,-2,5,20,17];
+        // function sort(arr, sum='+') {
+        //     if (sum == '+') {
+        //         return sortdown(arr);
+        //     }
+        //     else if (sum == '-') {
+        //         return sortup(arr);
+        //     }
+        // }
+        //
+        //
+        // function sortdown(arr) {
+        //     for (i = 0; i < arr.length; i++) {
+        //         for (j = 0; j < arr.length; j++) {
+        //             let temp = 0;
+        //             if (arr[j] > arr[i]) {
+        //                 temp = arr[i];
+        //                 arr[i] = arr[j];
+        //                 arr[j] = temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        //
+        //
+        // function sortup(arr) {
+        //     for (i = 0; i < arr.length; i++) {
+        //         for (j = 0; j < arr.length; j++) {
+        //             let temp = 0;
+        //             if (arr[j] < arr[i]) {
+        //                 temp = arr[i];
+        //                 arr[i] = arr[j];
+        //                 arr[j] = temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        //
+        // console.log(sort(arr12,'-'));
+
+
+        let ma = new Number();
+        console.log(ma);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

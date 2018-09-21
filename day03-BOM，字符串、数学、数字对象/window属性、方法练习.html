@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day03demo</title>
+
+    <script>
+
+        //练习一：将“img/1.jpg"换成”img/1.gif“
+        let str1 = new String("img/1.jpg");
+        let res1 = str1.replace("jpg","gif");
+        console.log(res1);
+
+        //练习二：找到下面字符串中的sxuek，并把它们替换为666666；
+        //let str = "优逸客官网地址:http://www.sxuek.com,优逸客课程体系:http://www.sxuek.com/uisj/,优逸客学生作品:http://www.sxuek.com/sxzp/";
+        let str2 = new String("优逸客官网地址:http://www.sxuek.com,优逸客课程体系:http://www.sxuek.com/uisj/,优逸客学生作品:http://www.sxuek.com/sxzp/");
+        //手动重复替换
+        let res21 = str2.replace("sxuek","666666");
+        let res22 = res21.replace("sxuek","666666");
+        let res23 = res22.replace("sxuek","666666");
+        console.log(res23);
+        //seach自动循环替换(只知道条件不知道次数的时候用while）
+        while (str2.search("sxuek") !== -1) {
+            index = str2.search("sxuek");
+            str2 = str2.replace("sxuek","666666");
+            console.log(str2);
+            console.log(index);
+        }
+        //正则表达式方法
+        let res2 = str2.replace(/sxuek/g,"666666");
+        console.log(res2);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

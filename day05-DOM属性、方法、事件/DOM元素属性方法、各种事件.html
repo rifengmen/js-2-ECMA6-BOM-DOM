@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM元素属性方法、各种事件</title>
+
+    <style type="text/css">
+        
+        #box {
+            width: 600px;
+            height: 350px;
+            margin: 50px auto;
+            font-size: 30px;
+            color: red;
+            background-color: yellow;
+        }
+        .text {
+            display: block;
+            width: 600px;
+            height: 350px;
+            margin: 50px auto;
+            font-size: 30px;
+            color: red;
+            background-color: yellow;
+        }
+        .valueo {
+            background-color: pink;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="box">123456</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<a href="#" class="text name valueo aaa">123</a>
+<a href="#" class="text">223</a>
+<a href="#" class="text">323</a>
+<a href="#" class="text">423</a>
+<a href="#" class="text">523</a>
+<a href="#" class="text">623</a>
+<a href="#" class="text">723</a>
+<a href="#" class="text">823</a>
+<a href="#" class="text">923</a>
+<a href="#"></a>
+<a href="#"></a>
+<a href="#"></a>
+<a href="#"></a>
+<img src="http://img5.imgtn.bdimg.com/it/u=415293130,2419074865&fm=26&gp=0.jpg" alt="">
+<img src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg" alt="">
+<img src="http://img.zcool.cn/community/01b34f58eee017a8012049efcfaf50.jpg@1280w_1l_2o_100sh.jpg" alt="">
+<img src="http://img.zcool.cn/community/01c60259ac0f91a801211d25904e1f.jpg@1280w_1l_2o_100sh.jpg" alt="">
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action="" name="user_name"></form>
+<form action=""></form>
+<form action=""></form>
+<form action=""></form>
+<form action=""></form>
+<form action=""></form>
+<form action=""></form>
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+
+
+</body>
+</html>
+
+<script>
+
+    // DOM:document object module ---- (文档对象模型)
+    // 对页面中的元素进行增删改查，获取元素，对内容和样式的操作
+
+
+
+    // let res = document.body;
+
+
+    // 属性
+    // // 获取页面中的表单
+    // let res = document.forms;
+    // console.log(res);
+    // // 获取页面中所有图片标签的集合，通过下标获取其中的某一个标签
+    // let res = document.images;
+    // console.log(res);
+
+
+    // 方法
+    // 1.获取元素的方法
+    // 1.1老方法ES5
+    // //通过元素标签获取元素集合，凡是集合类的都是复数，获取其中的某一个需要通过添加下标来进行
+    // let ele = document.getElementsByTagName("div")[0];
+    // console.log(ele);
+    // //通过ID名称获取该元素，名字不是复数
+    // let ele = document.getElementById("box");
+    // console.log(ele);
+    // //通过元素类名获取元素集合
+    // let ele = document.getElementsByClassName("text")
+    // console.log(ele);
+    // //通过元素的名字获取该元素集合
+    // let ele = document.getElementsByName("uesr_name");
+    // console.log(ele);
+    // 1.2新方法ES6
+    // // 通过选择器获取某类元素中的第一个
+    // let ele = document.querySelector(".text");
+    // console.log(ele);
+    // // 通过选择器获取某类元素的集合
+    // let ele = document.querySelectorAll(".text");
+    // console.log(ele);
+
+
+    // 2.对元素内容的操作方法
+    // let ele = document.querySelector("#box");
+    // // 获取元素中的内容（内容和标签都能）
+    // let con = ele.innerHTML;
+    // // 给元素中添加一些内容
+    // ele.innerHTML += "123456";
+    // // 可以识别标签
+    // ele.innerHTML += "<b>文字</b>";
+    // console.log(con);
+    // // 获取元素中的内容，不识别标签，要识别标签需要使用innerHTML
+    // let con1 = ele.textContent;
+    // ele.textContent += "123456";
+    // ele.textContent += "<b>文字</b>";
+    // console.log(con1);
+
+
+    // 3.对元素样式的操作方法
+    // let ele = document.querySelector("#box");
+    // // 获取元素样式,点后面的是要获取的具体的样式
+    // let yangshi = getComputedStyle(ele,null).color;
+    // // console.log(yangshi);
+    // // 设置元素样式
+    // // 不识别连字符，转化为驼峰命名法
+    // ele.style.fontSize = "60px";
+    // ele.style.backgroundColor = "green";
+    // ele.style.textAlign = "center";
+    // 可以连写
+    // ele.style = "font-size:60px;background-color:green";
+    // console.log(yangshi);
+
+
+    // 4.对元素类名的操作方法
+    // let ele = document.querySelector(".text");
+    // // 4.1老方法
+    // // 获取类名，得到一个字符串
+    // let name = ele.className.slice(0,4);
+    // ele.className = name;
+    // console.log(name);
+    // // 4.2新方法
+    // // classList获取类名集合
+    // let name = ele.classList;
+    // // add添加新的类名
+    // name.add("aa");
+    // // 通过remove去掉某些类名
+    // name.remove("valueo");
+    // // 通过toggle切换类名，有就删除，没有就添加
+    // name.toggle("valueo");
+    // console.log(name);
+
+    // // 点击切换类名，改变样式
+    // ele.onclick = function () {
+    //     ele.classList.toggle("valueo");
+    // }
+
+
+    // 5.获取/设置任意属性
+    // // 获取已有的属性  属性名
+    // let attr = ele.getAttribute("href");
+    // // 设置自定义添加属性值，参数一：属性名；参数二：属性值。
+    // ele.setAttribute("name","wenben");
+
+    // //获取页面中所有的图片，把jpg格式换成png格式
+    // let pic = document.querySelectorAll("img");
+    // for (let i = 0; i < pic.length; i++) {
+    //     let attr = pic[i].getAttribute("src");
+    //     attr = attr.replace(".jpg",".png");
+    //     pic[i].setAttribute("src",attr);
+    // }
+
+
+
+
+
+    // 各种事件
+    // let ele = document.getElementById("box");
+    // 1.鼠标事件
+    // // onclick 单击
+    // ele.onclick = function () {
+    //     alert(1);
+    // }
+    // // ondblclick 双击
+    // ele.ondblclick = function () {
+    //     alert(2);
+    // }
+    // // onmouseover  鼠标移入
+    // ele.onmouseover = function () {
+    //     alert(3);
+    // }
+    // // onmouseenter 鼠标移入
+    // ele.onmouseenter = function () {
+    //     alert(4);
+    // }
+    // // onmouseout   鼠标移出
+    // ele.onmouseout = function () {
+    //     alert(5);
+    // }
+    // // onmouseleave   鼠标移出
+    // ele.onmouseleave = function () {
+    //     alert(6);
+    // }
+    // // onmousedown  鼠标按下
+    // ele.onmousedown = function () {
+    //     alert(7);
+    // }
+    // // onmouseup  鼠标抬起
+    // ele.onmouseup = function () {
+    //     alert(8);
+    // }
+    // // onconteextmenu  鼠标右键
+    // ele.oncontextmenu = function () {
+    //     alert(9);
+    // }
+    // // onmousemove鼠标拖拽
+    // ele.onmousemove = function () {
+    //     alert(10);
+    // }
+
+
+    // 2.键盘事件
+    // // onkeydown  键盘按下事件
+    // onkeydown = function (e) {
+    //     console.log(e.key);
+    // }
+    // // onkeyup  键盘抬起事件
+    // onkeyup = function (e) {
+    //     console.log(e.key);
+    // }
+    // // onkeypress  键盘按下
+    // onkeypress = function (e) {
+    //     console.log(e.key);
+    // }
+
+
+    // 3.窗口
+    // onload  页面加载
+
+
+    // onresize  窗口大小发生改变
+
+
+    // onscroll  页面滚动
+
+
+    // 4.表单事件
+    // onsubmit  提交
+
+
+    // onreset  重置
+
+
+    // onfocus  获得焦点
+
+
+    // onblur  失去焦点
+
+
+    // onchange  内容发生改变
+
+
+    // 练习
+    // let inputs = document.querySelector("input");
+    // console.log(inputs);
+    // inputs.setAttribute("placeholder","请输入您的用户名");
+    // inputs.style = "width=130px;height=30px;border=2px solid red;outline=none";
+    // inputs.onfocus = function () {
+    //     inputs.style.borderColor = "blue";
+    // }
+    // inputs.onblur = function () {
+    //     inputs.style.borderColor = "yellow";
+    // }
+
+
+
+
+</script>

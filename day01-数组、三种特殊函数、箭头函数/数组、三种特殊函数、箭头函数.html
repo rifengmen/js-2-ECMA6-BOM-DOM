@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组、三种特殊函数、箭头函数</title>
+
+    <script>
+
+        // //数组
+        // var arr = ['1','2aa',"",undefined,function(){},[1,2,3]];
+        // //二维数组
+        // var arr1=[[1,2,3],['a','b','c'],["",undefined,null]];
+        // for (i=0;i<arr1.length;i++) {
+        //     for (j=0;j<arr1.length;j++) {
+        //         document.write(arr1[i][j]);
+        //     }
+        // }
+        //
+        //
+        // //函数
+        // function aa(type) {
+        //     if (type == 1) {
+        //         console.log('111');
+        //     } else (type == 2) {
+        //         console.log('222');
+        //     }
+        // }
+        // aa(值);
+        // //函数默认值
+        // //if表达式法
+        // function aa(type) {
+        //     if (type == undefined) {
+        //         type = 1;
+        //     } else {
+        //         type = type;
+        //     }
+        // }
+        // aa(值);
+        // //三元表达式法
+        // function aa(type) {
+        //     type == undefined ?"1":type;
+        // }
+        // aa(值);
+        // //逻辑或运算符法
+        // function aa(type) {
+        //     type == undefined || type;
+        // }
+        // aa(值);
+        // //es6默认值
+        // function aa(type=1) {
+        // }
+        // aa(值);
+
+
+        //剩余参数
+        //res接收法
+        // var arr = ['aa','bb','cc'];
+        // push(arr,11,22,33);
+        // function push(arr, ...res) {
+        //     for (var i = 0; i < res.length; i++) {
+        //         arr [arr.length] = res[i];
+        //     }
+        //     // console.log(arr);
+        // }
+        // // console.log(res)
+        // console.log(arr);
+
+
+        // //ES6新增关键字let
+        // //用let的结果
+        // function sum(i){
+        //     for(let i=0;i<10;i++) {
+        //         i++;
+        //     }
+        //     console.log(i);
+        // }
+        // sum(8);
+        // //用var的结果
+        // function sum(i){
+        //     for(var i=0;i<10;i++) {
+        //         i++;
+        //     }
+        //     console.log(i);
+        // }
+        // sum(8);
+
+
+        // //三个特殊函数（回调、闭包、递归）
+        // //回调函数
+        // function aa(num1,num2,bb) {
+        //     bb();
+        //     console.log(num1 + num2);
+        // }
+        // aa(1,2,function bb(){console.log(1);})
+        //
+        // function sum(num1, num2, callback) {
+        //     callback();
+        //     console.log(num1 + num2);
+        // }
+        // sum(5,6,function add() {});
+        // //递归函数
+        // var num=5;
+        // function jian(num) {
+        //     num--;
+        //     if (num == 0) {
+        //         return;
+        //     }
+        //     else {
+        //         jian(num);
+        //         console.log(num);
+        //     }
+        // }
+        // jian(num);
+        // //闭包函数
+        // function outer(num1) {
+        //     return function inner(num2) {
+        //         console.log(num1 + num2);
+        //     }
+        // }
+        // var res=outer(2);
+        // res(3);
+        //
+        //
+        // //计算阶乘
+        // //循环法
+        // function f0(num) {
+        //     for (let i = num-1; i >= 1; i--) {
+        //         num*=i;
+        //     }
+        //     return num;
+        // }
+        // document.write(f0(5));
+        // //函数递归法
+        // function f1(num1) {
+        //     if (num1 == 1) {
+        //         return num1;
+        //     }
+        //     else {
+        //        return num1*= (f1(--num1));
+        //     }
+        // }
+        // document.write(f1(5));
+        //
+        //
+        // //箭头函数:形参=>函数的返回值，下面两个完全相同
+        // let aa = num1 => num1;
+        // let aa = function (num1) {
+        //     return num1;
+        // }
+        //
+        // let bb = (num1,num2,num3) => num1+num2+num3;
+        // let cc = (num1,number2,num3) => {
+        //     num1++;
+        //     num2--;
+        //     num3**;
+        //     return num1*num2*num3;
+        // }
+
+        // 内置顶层函数
+        // // escape编码
+        // let res = escape('优逸客');
+        // console.log(res);
+        // // unescape解码
+        // let res1 = unescape('%u4F18%u9038%u5BA2');
+        // console.log(res1);
+        //Number:把其他数据类型转化为数值型
+        //初始数据类型：数值型（整数、小数、二进制、八进制、十六进制、科学计数法、NaN)、字符串型、布尔值、null、undefined
+
+        //复合数据类型：对象（数组、函数）
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

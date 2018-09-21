@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+
+    <script>
+
+
+        //创建对象的三种方法
+        //第一种方法通过构造函数，然后实例化这个类创建一个对象出来
+        //创建Computer类
+        function Computer(){
+
+        }
+        //实例化一个类--创建对象lenovo
+        let lenovo = new Computer();
+        //添加属性
+        lenovo.color="red";
+        lenovo.size="15寸";
+        lenovo.brand="联想";
+        //添加方法
+        lenovo.study = function(){
+            console.log('这台电脑可以用来学习');
+        }
+        lenovo.play = function() {
+            console.log('这台电脑可以用来打游戏');
+        }
+        console.log(lenovo);
+
+
+        //构造函数
+        function Computer(color,size,brand) {
+            //添加属性
+            //属性名 = 值
+            //this.谁调用/实例化就是谁
+            this.color = color;
+            this.size = size;
+            this.brand = brand;
+            //添加方法
+            //一般不这样放，都是放在prototype中
+            this.study = function () {
+                console.log("这台电脑可以用来学习");
+            }
+            //构造函数的属性prototype,可以用来添加公共属性和方法
+            //_proto_，指向构造函数的prototype，实现继承
+            //原型链  不断继承  最大父级--object--null
+            Computer.prototype{
+                play:function() {
+                    console.log("打游戏");
+                }
+            }
+        }
+
+        //实例化一个类，创建一个对象
+        let lenovo = new Computer("red","15寸","联想");
+        //判断某个对象是否属于某个构造函数  instanceof 如果是返回true，否则返回false
+        let zhangsansan = new Person();
+        console.log(zhangsansan instanceof Person);
+        //添加自己特有的属性/方法
+        lenovo.price = "10000";
+        //删除某个属性/方法
+        delete lenovo.color;
+        //清空对象
+        lenovo = null;
+        //访问某个属性/方法
+        console.log(lenovo.size);
+        console.log(lenovo.study());
+
+        console.log(lenovo);
+        // 遍历对象
+        for (let i in lenovo) {
+            //属性/方法名称
+            console.log(i);
+            //属性值/方法内容
+            console.log(lenovo[i]);
+        }
+
+
+        // //for in循环
+        // let arr = [1,2,3,4,5,6];
+        // for (let i in arr) {
+        //     //下标
+        //     console.log(i);
+        //     //每个下标对应的值
+        //     console.log(arr[i]);
+        // }
+
+
+        // //第二种方法通过json格式直接创建一个对象出来
+        // //json格式直接创建一个对象，属性/方法之间用逗号隔开
+        // let lenovo = {
+        //     color="red",
+        //     size="15寸",
+        //     brand="联想",
+        //     study = function(){
+        //         console.log('这台电脑可以用来学习');
+        //     },
+        // }
+        // //添加自己特有的属性/方法
+        // lenovo.price = "10000";
+        // //删除某个属性/方法
+        // delete lenovo.color;
+        // //访问某个属性/方法
+        // console.log(lenovo.size);
+        // console.log(lenovo.study());
+        //
+        // console.log(lenovo);
+        // // 遍历对象
+        // for (let i in lenovo) {
+        //     //属性/方法名称
+        //     console.log(i);
+        //     //属性值/方法内容
+        //     console.log(lenovo[i]);
+        // }
+
+
+        //第三种方法通过class关键字创建类，然后实例化这个类创建一个对象出来
+        //class关键字创建类，首字母大写
+        //类名后不能加小括号，加了就是函数
+        class Computer{
+            //构造函数
+            constructor(color,size,brand) {
+                //属性名 = 值
+                //this：谁调用实例化就是谁
+                this.color = color;
+                this.size = size;
+                this.brand = brand;
+                this.study = function () {
+                    console.log("这台电脑可以用来学习");
+                }
+            }
+            //原型
+            play(){
+                console.log(123);
+                return 1;
+            }
+            watch(){
+                console.log(456);
+                return 2;
+            }
+        }
+        //实例化一个类，创建一个对象
+        let lenovo = new Computer("red","15寸","联想");
+        // //添加自己特有的属性/方法
+        // lenovo.price = "10000";
+        // //删除某些属性方法
+        // delete lenovo.color;
+        // //访问某个属性/方法
+        // console.log(lenovo.size);
+        // console.log(lenovo.study);
+        console.log(lenovo);
+
+
+    </script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
